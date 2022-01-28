@@ -4,6 +4,11 @@ namespace Unity.FPS.Game
 {
     // The Game Events used across the Game.
     // Anytime there is a need for a new event, it should be added here.
+    public enum ActiveColor
+	{
+        RED,
+        BLUE,
+	}
 
     public static class Events
     {
@@ -33,6 +38,11 @@ namespace Unity.FPS.Game
     {
         public bool Win;
     }
+
+    public class ColorSwitchEvent: GameOverEvent
+	{
+        public ActiveColor CurrentActiveColor;
+	}
 
     public class PlayerDeathEvent : GameEvent { }
 

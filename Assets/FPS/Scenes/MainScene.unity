@@ -4959,6 +4959,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 132085943, guid: c996b53e9f849234393d1e90f68d1679, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1615079986, guid: c996b53e9f849234393d1e90f68d1679, type: 3}
       propertyPath: Replacements.Array.size
       value: 0

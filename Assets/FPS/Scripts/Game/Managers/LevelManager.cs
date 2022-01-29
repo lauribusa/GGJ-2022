@@ -23,6 +23,11 @@ namespace Assets.FPS.Scripts.Game.Managers
 			EventManager.AddListener<ColorSwitchEvent>(OnColorSwitchEvent);
 		}
 
+		private void Start()
+		{
+			TriggerColorSwitchEvent();
+		}
+
 		private void SetActiveColor(ActiveColor activeColor)
 		{
 			CurrentActiveColor = activeColor;

@@ -126,7 +126,7 @@ namespace Unity.FPS.Gameplay
 		{
             if (CanProcessInput())
 			{
-                return Input.GetButton(GameConstants.k_ButtonNameSwitchColor);
+                return Input.GetButtonDown(GameConstants.k_ButtonNameSwitchColor);
             }
             return false;
         }

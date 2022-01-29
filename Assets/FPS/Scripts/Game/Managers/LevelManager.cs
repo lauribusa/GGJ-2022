@@ -47,7 +47,7 @@ namespace Assets.FPS.Scripts.Game.Managers
 		{
 			TogglableObjectList.ForEach(obj =>
 			{
-				obj.ToggleSolidState(CurrentActiveColor);
+				obj.ToggleSolidState(CurrentActiveColor, togglableObjectSO);
 			});
 		}
 

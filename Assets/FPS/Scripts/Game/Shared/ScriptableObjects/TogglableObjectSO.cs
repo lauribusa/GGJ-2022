@@ -7,14 +7,18 @@ public class TogglableObjectSO : ScriptableObject
 {
 	[Header("Solid Floor")]
 	public Mesh SolidFloorMesh;
-	public Material SolidFloorMaterial;
+	public Material SolidFloorBlueMaterial;
+	public Material SolidFloorRedMaterial;
 	[Header("Non-Solid Floor")]
 	public Mesh NonSolidFloorMesh;
-	public Material NonSolidFloorMaterial;
+	public Material NonSolidFloorBlueMaterial;
+	public Material NonSolidFloorRedMaterial;
 	[Header("Solid Wall")]
 	public Mesh SolidWallMesh;
-	public Material SolidWallMaterial;
+	public Material SolidWallBlueMaterial;
+	public Material SolidWallRedMaterial;
 	[Header("Non-Solid Wall")]
 	public Mesh NonSolidWallMesh;
-	public Material NonSolidWallMaterial;
+	public Material NonSolidWallBlueMaterial;
+	public Material NonSolidWallRedMaterial;
 }

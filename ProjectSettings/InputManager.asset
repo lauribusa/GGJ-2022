@@ -390,8 +390,6 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-<<<<<<< HEAD
-=======
     m_Name: Switch Color
     descriptiveName: 
     descriptiveNegativeName: 
@@ -408,7 +406,6 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
->>>>>>> 25eb4fb57af62a83652bbc6b39d56cdbc3ac2826
     m_Name: Enable Debug Button 1
     descriptiveName: 
     descriptiveNegativeName: 

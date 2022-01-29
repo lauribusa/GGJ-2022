@@ -52,7 +52,6 @@ namespace Unity.FPS.Game
 		{
 			if(TogglableObjectList.Count <= 0)
 			{
-				Debug.Log("List was empty");
 				TogglableObject[] togglableObjects = FindObjectsOfType<TogglableObject>();
 				TogglableObjectList = togglableObjects.ToList();
 			}

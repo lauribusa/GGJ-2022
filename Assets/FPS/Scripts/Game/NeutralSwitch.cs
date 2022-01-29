@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
+using Unity.FPS.Game;
+using System;
 
 namespace Unity.FPS.Game
 {
@@ -18,6 +20,7 @@ namespace Unity.FPS.Game
 		public Damageable damageable;
 		public Health health;
 		private LevelManager levelManager;
+		private Coroutine damageCoroutine;
 		private int materialIndex;
 		public SwitchState switchState { get; private set; }
 		private void Awake()
@@ -35,6 +38,18 @@ namespace Unity.FPS.Game
 				gameObject.GetComponent<MeshRenderer>().material = materials[1];
 			}
 		}
+
+		public void OnDamageTrigger()
+		{
+			if(damageCoroutine != null)
+			{
+				StopCoroutine(IsDamaged());
+				damageCoroutine = null;
+			}
+			damageCoroutine = StartCoroutine(IsDamaged());
+
+		}
+
 		private void Update()
 		{
 			if(health.CurrentHealth < health.MaxHealth)
@@ -45,7 +60,8 @@ namespace Unity.FPS.Game
 		public IEnumerator IsDamaged()
 		{
 			switchState = SwitchState.IsTriggered;
-			EventManager.Broadcast(Events.ColorSwitchEvent);
+			ColorSwitchEvent evt = Events.ColorSwitchEvent;
+			EventManager.Broadcast(evt);
 
 			if(materialIndex == 0)
 			{
@@ -59,6 +75,7 @@ namespace Unity.FPS.Game
 
 			yield return new WaitForSeconds(1);
 			switchState = SwitchState.Idle;
+			yield return null;
 		}
 
 		

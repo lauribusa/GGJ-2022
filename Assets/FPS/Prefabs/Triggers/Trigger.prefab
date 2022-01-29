@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 8021234020025653709}
   - component: {fileID: 3949008879896061271}
   - component: {fileID: 8951069646940405823}
-  - component: {fileID: 2985103212488296535}
   - component: {fileID: 6215123295554777678}
+  - component: {fileID: 6215123295554777679}
   m_Layer: 0
   m_Name: Trigger
   m_TagString: Untagged
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 807df0a3bd5fb484687907be1b8246c0, type: 2}
+  - {fileID: 2100000, guid: c70bc0190174a41759ea517f8d94ace1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -112,25 +112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DamageMultiplier: 1
   SensibilityToSelfdamage: 0
---- !u!114 &2985103212488296535
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8021234020023715597}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7bcc11839cf6db4e9d6e3b296fbe2af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RandomHitSparks: []
-  OnColorToggleSfx: {fileID: 8300000, guid: cba089de3eef16d46baeda4077140a74, type: 3}
-  materials:
-  - {fileID: 2100000, guid: 807df0a3bd5fb484687907be1b8246c0, type: 2}
-  - {fileID: 2100000, guid: 1151f4057e77ab5429143caedba0a672, type: 2}
-  damageable: {fileID: 8951069646940405823}
-  health: {fileID: 6215123295554777678}
+  isSwitch: {fileID: 6215123295554777679}
 --- !u!114 &6215123295554777678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,3 +127,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 99999
   CriticalHealthRatio: 0.3
+--- !u!114 &6215123295554777679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8021234020023715597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc074610ba067ff4cba8166f47e6e99a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RandomHitSparks: []
+  OnColorToggleSfx: {fileID: 8300000, guid: cba089de3eef16d46baeda4077140a74, type: 3}
+  materials:
+  - {fileID: 2100000, guid: c70bc0190174a41759ea517f8d94ace1, type: 2}
+  - {fileID: 2100000, guid: 0030b1f081f074ea79e4c8398f97fc08, type: 2}
+  damageable: {fileID: 8951069646940405823}
+  health: {fileID: 6215123295554777678}

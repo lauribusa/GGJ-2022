@@ -21,6 +21,7 @@ namespace Unity.FPS.Game
         public static AmmoPickupEvent AmmoPickupEvent = new AmmoPickupEvent();
         public static DamageEvent DamageEvent = new DamageEvent();
         public static DisplayMessageEvent DisplayMessageEvent = new DisplayMessageEvent();
+        public static ColorSwitchEvent ColorSwitchEvent = new ColorSwitchEvent();
     }
 
     public class ObjectiveUpdateEvent : GameEvent
@@ -39,9 +40,9 @@ namespace Unity.FPS.Game
         public bool Win;
     }
 
-    public class ColorSwitchEvent: GameOverEvent
+    public class ColorSwitchEvent: GameEvent
 	{
-        public ActiveColor CurrentActiveColor;
+        public ActiveColor NewActiveColor;
 	}
 
     public class PlayerDeathEvent : GameEvent { }

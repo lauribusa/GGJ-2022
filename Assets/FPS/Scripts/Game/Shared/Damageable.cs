@@ -28,7 +28,6 @@ namespace Unity.FPS.Game
             if (isSwitch)
 			{
                 isSwitch.OnDamageTrigger();
-                return;
 			}
             if (Health)
             {

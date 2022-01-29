@@ -126,7 +126,7 @@ namespace Unity.FPS.Gameplay
 
 			if (m_InputHandler.GetColorSwitchInput())
 			{
-                EventManager.Broadcast(Events.ColorSwitchEvent);
+                EventManager.Broadcast(Events.ColorSwitchTriggerEvent);
 			}
 
             if (activeWeapon != null && activeWeapon.IsReloading)

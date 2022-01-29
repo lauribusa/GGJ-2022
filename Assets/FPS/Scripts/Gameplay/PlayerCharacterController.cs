@@ -101,6 +101,7 @@ namespace Unity.FPS.Gameplay
         public Vector3 CharacterVelocity { get; set; }
         public bool IsGrounded { get; private set; }
         public bool HasJumpedThisFrame { get; private set; }
+        public bool HasDoubleJumpedThisFrame { get; private set; }
         public bool IsDead { get; private set; }
         public bool IsCrouching { get; private set; }
 
@@ -179,6 +180,7 @@ namespace Unity.FPS.Gameplay
             }
 
             HasJumpedThisFrame = false;
+            HasDoubleJumpedThisFrame = false;
 
             bool wasGrounded = IsGrounded;
             GroundCheck();
@@ -365,6 +367,24 @@ namespace Unity.FPS.Gameplay
 
                     // apply the gravity to the velocity
                     CharacterVelocity += Vector3.down * GravityDownForce * Time.deltaTime;
+                    if (!IsGrounded && !HasDoubleJumpedThisFrame && m_InputHandler.GetJumpInputDown())
+					{
+                        CharacterVelocity = new Vector3(CharacterVelocity.x, 0f, CharacterVelocity.z);
+
+                        // then, add the jumpSpeed value upwards
+                        CharacterVelocity += Vector3.up * JumpForce;
+
+                        // play sound
+                        AudioSource.PlayOneShot(JumpSfx);
+
+                        // remember last time we jumped because we need to prevent snapping to ground for a short time
+                        m_LastTimeJumped = Time.time;
+                        HasDoubleJumpedThisFrame = true;
+
+                        // Force grounding to false
+                        IsGrounded = false;
+                        m_GroundNormal = Vector3.up;
+                    }
                 }
             }
 

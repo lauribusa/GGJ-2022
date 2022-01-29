@@ -122,6 +122,15 @@ namespace Unity.FPS.Gameplay
             return false;
         }
 
+        public bool GetColorSwitchInput()
+		{
+            if (CanProcessInput())
+			{
+                return Input.GetButtonDown(GameConstants.k_ButtonNameSwitchColor);
+            }
+            return false;
+        }
+
         public bool GetAimInputHeld()
         {
             if (CanProcessInput())

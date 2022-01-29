@@ -17,10 +17,10 @@ TagManager:
   - 
   - FirstPersonWeapon
   - PhysicalAmmo
-  - 
-  - 
-  - 
-  - 
+  - SolidWall
+  - NonSolidWall
+  - SolidFloor
+  - NonSolidFloor
   - 
   - 
   - 

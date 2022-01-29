@@ -16,7 +16,7 @@ namespace Unity.FPS.Game
 	public class LevelManager : MonoBehaviour
 	{
 		public ActiveColor _initialActiveColor;
-		[SerializeField] public ActiveColor CurrentActiveColor;
+		public ActiveColor CurrentActiveColor;
 		[SerializeField] private List<TogglableObject> TogglableObjectList;
 		public TogglableObjectSO togglableObjectSO;
 		private void Awake()

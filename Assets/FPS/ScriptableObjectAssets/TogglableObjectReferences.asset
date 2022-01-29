@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b5a88768dc6e2640970d916251c2b74, type: 3}
+  m_Name: TogglableObjectReferences
+  m_EditorClassIdentifier: 
+  SolidFloorMesh: {fileID: 0}
+  SolidFloorBlueMaterial: {fileID: 2100000, guid: 807df0a3bd5fb484687907be1b8246c0,
+    type: 2}
+  SolidFloorRedMaterial: {fileID: 2100000, guid: 1151f4057e77ab5429143caedba0a672,
+    type: 2}
+  NonSolidFloorMesh: {fileID: 0}
+  NonSolidFloorBlueMaterial: {fileID: 2100000, guid: 807df0a3bd5fb484687907be1b8246c0,
+    type: 2}
+  NonSolidFloorRedMaterial: {fileID: 2100000, guid: 1151f4057e77ab5429143caedba0a672,
+    type: 2}
+  SolidWallMesh: {fileID: 0}
+  SolidWallBlueMaterial: {fileID: 2100000, guid: 807df0a3bd5fb484687907be1b8246c0,
+    type: 2}
+  SolidWallRedMaterial: {fileID: 2100000, guid: 1151f4057e77ab5429143caedba0a672,
+    type: 2}
+  NonSolidWallMesh: {fileID: 0}
+  NonSolidWallBlueMaterial: {fileID: 2100000, guid: 807df0a3bd5fb484687907be1b8246c0,
+    type: 2}
+  NonSolidWallRedMaterial: {fileID: 2100000, guid: 1151f4057e77ab5429143caedba0a672,
+    type: 2}

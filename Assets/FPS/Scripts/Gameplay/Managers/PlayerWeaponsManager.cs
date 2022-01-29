@@ -124,6 +124,11 @@ namespace Unity.FPS.Gameplay
             // shoot handling
             WeaponController activeWeapon = GetActiveWeapon();
 
+			if (m_InputHandler.GetColorSwitchInput())
+			{
+                EventManager.Broadcast(Events.ColorSwitchEvent);
+			}
+
             if (activeWeapon != null && activeWeapon.IsReloading)
                 return;
 

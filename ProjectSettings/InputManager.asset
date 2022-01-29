@@ -390,6 +390,25 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
+<<<<<<< HEAD
+=======
+    m_Name: Switch Color
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: a
+    altNegativeButton: 
+    altPositiveButton: joystick button 2
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 0
+  - serializedVersion: 3
+>>>>>>> 25eb4fb57af62a83652bbc6b39d56cdbc3ac2826
     m_Name: Enable Debug Button 1
     descriptiveName: 
     descriptiveNegativeName: 

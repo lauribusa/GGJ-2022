@@ -42,7 +42,6 @@ namespace Unity.FPS.Game
 
     public class ColorSwitchEvent: GameEvent
 	{
-        public ActiveColor NewActiveColor;
 	}
 
     public class PlayerDeathEvent : GameEvent { }

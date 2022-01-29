@@ -199,10 +199,6 @@ namespace Unity.FPS.Gameplay
                     return -1;
                 else if (Input.GetAxis(axisName) < 0f)
                     return 1;
-                else if (Input.GetAxis(GameConstants.k_ButtonNameNextWeapon) > 0f)
-                    return -1;
-                else if (Input.GetAxis(GameConstants.k_ButtonNameNextWeapon) < 0f)
-                    return 1;
             }
 
             return 0;

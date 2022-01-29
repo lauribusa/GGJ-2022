@@ -140,10 +140,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Defeat all the enemies
+  m_text: Kill them all
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 75063828274bdb145a55f6dd2f22e8b2, type: 2}
-  m_sharedMaterial: {fileID: 21098970014090698, guid: 75063828274bdb145a55f6dd2f22e8b2,
+  m_fontAsset: {fileID: 11400000, guid: 61c260143a6bd2d4a84aeb095d41c14f, type: 2}
+  m_sharedMaterial: {fileID: 5401695445962648985, guid: 61c260143a6bd2d4a84aeb095d41c14f,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -277,8 +277,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: descrpition text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 75063828274bdb145a55f6dd2f22e8b2, type: 2}
-  m_sharedMaterial: {fileID: 21098970014090698, guid: 75063828274bdb145a55f6dd2f22e8b2,
+  m_fontAsset: {fileID: 11400000, guid: 61c260143a6bd2d4a84aeb095d41c14f, type: 2}
+  m_sharedMaterial: {fileID: 5401695445962648985, guid: 61c260143a6bd2d4a84aeb095d41c14f,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -412,8 +412,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0/5
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 75063828274bdb145a55f6dd2f22e8b2, type: 2}
-  m_sharedMaterial: {fileID: 21098970014090698, guid: 75063828274bdb145a55f6dd2f22e8b2,
+  m_fontAsset: {fileID: 11400000, guid: 61c260143a6bd2d4a84aeb095d41c14f, type: 2}
+  m_sharedMaterial: {fileID: 5401695445962648985, guid: 61c260143a6bd2d4a84aeb095d41c14f,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}

@@ -97,14 +97,13 @@ public class TogglableObject : MonoBehaviour
 	{
 		if(meshCollider == null || meshRenderer == null)
 		{
-			Debug.Log("MeshRenderer was not found" + gameObject.name);
 			Init();
 		}
         if(currentActiveColor == AssignedActiveColor)
 		{
-            IsSolid = true;
+			IsSolid = true;
 			meshCollider.enabled = true;
-			meshRenderer.enabled = true;
+			//meshRenderer.enabled = true;
 			
 			if (IsFloor)
 			{
@@ -118,7 +117,7 @@ public class TogglableObject : MonoBehaviour
 		{
             IsSolid = false;
 			meshCollider.enabled = false;
-			meshRenderer.enabled = false;
+			//meshRenderer.enabled = false;
 			if (IsFloor)
 			{
                 gameObject.layer = (int)TogglableObjectState.NonSolidFloor;

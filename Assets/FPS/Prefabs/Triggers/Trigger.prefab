@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3949008879896061271}
   - component: {fileID: 8951069646940405823}
   - component: {fileID: 2985103212488296535}
+  - component: {fileID: 6215123295554777678}
   m_Layer: 0
   m_Name: Trigger
   m_TagString: Untagged
@@ -124,7 +125,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RandomHitSparks: []
-  OnColorToggleSfx: {fileID: 0}
+  OnColorToggleSfx: {fileID: 8300000, guid: cba089de3eef16d46baeda4077140a74, type: 3}
   materials:
   - {fileID: 2100000, guid: 807df0a3bd5fb484687907be1b8246c0, type: 2}
   - {fileID: 2100000, guid: 1151f4057e77ab5429143caedba0a672, type: 2}
+  damageable: {fileID: 8951069646940405823}
+  health: {fileID: 6215123295554777678}
+--- !u!114 &6215123295554777678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8021234020023715597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e27364eefd6dd0341ba72a3bfc0d9727, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 99999
+  CriticalHealthRatio: 0.3

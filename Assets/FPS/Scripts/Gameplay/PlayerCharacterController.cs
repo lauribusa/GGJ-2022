@@ -1,4 +1,5 @@
-﻿using Unity.FPS.Game;
+﻿using System;
+using Unity.FPS.Game;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -76,6 +77,7 @@ namespace Unity.FPS.Gameplay
 
         [Tooltip("Sound played when jumping")] public AudioClip JumpSfx;
         [Tooltip("Sound played when landing")] public AudioClip LandSfx;
+        [Tooltip("Sound played when switching color")] public AudioClip switchSfx;
 
         [Tooltip("Sound played when taking damage froma fall")]
         public AudioClip FallDamageSfx;
@@ -102,6 +104,7 @@ namespace Unity.FPS.Gameplay
         public bool IsGrounded { get; private set; }
         public bool HasJumpedThisFrame { get; private set; }
         public bool HasDoubleJumpedThisFrame { get; private set; }
+        public bool HasDoubleJumped { get; private set; }
         public bool IsDead { get; private set; }
         public bool IsCrouching { get; private set; }
 
@@ -169,6 +172,7 @@ namespace Unity.FPS.Gameplay
             // force the crouch state to false when starting
             SetCrouchingState(false, true);
             UpdateCharacterHeight(true);
+            EventManager.AddListener<ColorSwitchEvent>(OnSwitchColor);
         }
 
         void Update()
@@ -217,7 +221,10 @@ namespace Unity.FPS.Gameplay
 
             HandleCharacterMovement();
         }
-
+        void OnSwitchColor(ColorSwitchEvent evt)
+		{
+            AudioSource.PlayOneShot(switchSfx);
+		}
         void OnDie()
         {
             IsDead = true;
@@ -304,6 +311,10 @@ namespace Unity.FPS.Gameplay
                 // handle grounded movement
                 if (IsGrounded)
                 {
+					if (HasDoubleJumped)
+					{
+                        HasDoubleJumped = false;
+					}
                     // calculate the desired velocity from inputs, max speed, and current slope
                     Vector3 targetVelocity = worldspaceMoveInput * MaxSpeedOnGround * speedModifier;
                     // reduce speed if crouching by crouch speed ratio
@@ -367,7 +378,7 @@ namespace Unity.FPS.Gameplay
 
                     // apply the gravity to the velocity
                     CharacterVelocity += Vector3.down * GravityDownForce * Time.deltaTime;
-                    if (!IsGrounded && !HasDoubleJumpedThisFrame && m_InputHandler.GetJumpInputDown())
+                    if (!HasDoubleJumped && m_InputHandler.GetJumpInputDown())
 					{
                         CharacterVelocity = new Vector3(CharacterVelocity.x, 0f, CharacterVelocity.z);
 
@@ -379,7 +390,7 @@ namespace Unity.FPS.Gameplay
 
                         // remember last time we jumped because we need to prevent snapping to ground for a short time
                         m_LastTimeJumped = Time.time;
-                        HasDoubleJumpedThisFrame = true;
+                        HasDoubleJumped = true;
 
                         // Force grounding to false
                         IsGrounded = false;
@@ -493,5 +504,10 @@ namespace Unity.FPS.Gameplay
             IsCrouching = crouched;
             return true;
         }
-    }
+
+		private void OnDestroy()
+		{
+            EventManager.RemoveListener<ColorSwitchEvent>(OnSwitchColor);
+		}
+	}
 }

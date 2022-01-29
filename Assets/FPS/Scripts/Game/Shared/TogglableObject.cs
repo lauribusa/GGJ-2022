@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.FPS.Game;
-using Assets.FPS.Scripts.Game.Managers;
 using System;
 
 public class TogglableObject : MonoBehaviour
@@ -11,23 +10,19 @@ public class TogglableObject : MonoBehaviour
     public bool IsFloor;
     public ActiveColor AssignedActiveColor;
     private Mesh Mesh;
-    private Collider collider;
+	[SerializeField]
+    private Collider meshCollider;
 	private MeshRenderer meshRenderer;
-	private void Awake()
-	{
-		collider = GetComponentInChildren<MeshCollider>();
-		meshRenderer = GetComponentInChildren<MeshRenderer>();
-	}
-	private void Start()
+	void Start()
     {
+		Init();
         AssignSelfToManager();
     }
 
-	private void Init(Mesh mesh, ActiveColor activeColor, bool isSolid)
+	private void Init()
 	{
-        AssignedActiveColor = activeColor;
-        Mesh = mesh;
-        IsSolid = isSolid;
+		meshCollider = GetComponentInChildren<MeshCollider>();
+		meshRenderer = GetComponentInChildren<MeshRenderer>();
 	}
 
 	private Material SelectMaterial(TogglableObjectSO materialReference)
@@ -100,31 +95,35 @@ public class TogglableObject : MonoBehaviour
 
     public void ToggleSolidState(ActiveColor currentActiveColor, TogglableObjectSO materialReference)
 	{
+		if(meshCollider == null || meshRenderer == null)
+		{
+			Init();
+		}
         if(currentActiveColor == AssignedActiveColor)
 		{
             IsSolid = true;
-			collider.enabled = true;
+			meshCollider.enabled = true;
 			meshRenderer.enabled = true;
 			
 			if (IsFloor)
 			{
-                this.gameObject.layer = (int)TogglableObjectState.SolidFloor;
+                gameObject.layer = (int)TogglableObjectState.SolidFloor;
 
 			} else
 			{
-                this.gameObject.layer = (int)TogglableObjectState.SolidWall;
+                gameObject.layer = (int)TogglableObjectState.SolidWall;
 			}
 		} else
 		{
             IsSolid = false;
-			collider.enabled = false;
+			meshCollider.enabled = false;
 			meshRenderer.enabled = false;
 			if (IsFloor)
 			{
-                this.gameObject.layer = (int)TogglableObjectState.NonSolidFloor;
+                gameObject.layer = (int)TogglableObjectState.NonSolidFloor;
 			} else
 			{
-                this.gameObject.layer = (int)TogglableObjectState.NonSolidWall;
+                gameObject.layer = (int)TogglableObjectState.NonSolidWall;
 			}
 		}
 		meshRenderer.material = SelectMaterial(materialReference);
@@ -132,6 +131,6 @@ public class TogglableObject : MonoBehaviour
 
     private void AssignSelfToManager()
 	{
-        LevelManager.I.AssignToList(this);
+		FindObjectOfType<LevelManager>().AssignToList(this);
     }
 }

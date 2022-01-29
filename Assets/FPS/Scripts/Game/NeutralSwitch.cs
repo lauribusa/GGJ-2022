@@ -60,5 +60,9 @@ namespace Unity.FPS.Game
 					throw new Exception("Out of range");
 			}
 		}
+		private void OnDestroy()
+		{
+			EventManager.RemoveListener<ColorSwitchEvent>(OnColorSwitchEvent);
+		}
 	}
 }

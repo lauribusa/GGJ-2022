@@ -97,6 +97,7 @@ public class TogglableObject : MonoBehaviour
 	{
 		if(meshCollider == null || meshRenderer == null)
 		{
+			Debug.Log("MeshRenderer was not found" + gameObject.name);
 			Init();
 		}
         if(currentActiveColor == AssignedActiveColor)

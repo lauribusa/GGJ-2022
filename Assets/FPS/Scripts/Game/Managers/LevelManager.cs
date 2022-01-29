@@ -84,7 +84,7 @@ namespace Unity.FPS.Game
 			{
 				TogglableObjectList.ForEach(obj =>
 				{
-					obj?.ToggleSolidState(CurrentActiveColor, togglableObjectSO);
+					obj.ToggleSolidState(CurrentActiveColor, togglableObjectSO);
 				});
 			}
 		}

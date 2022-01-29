@@ -299,9 +299,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _initialActiveColor: 0
-  TogglableObjectPrefabs:
-  - {fileID: 0}
-  - {fileID: 0}
+  TogglableObjectList: []
+  togglableObjectSO: {fileID: 11400000, guid: 43da114a9c983f44293db4c03dafdf71, type: 2}
 --- !u!114 &1065074375515001679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -426,7 +425,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SwitchOrder: 0
-  Replacements: []
+  Replacements:
+  - SourcePrefab: {fileID: 0}
+    TargetPrefab: {fileID: 0}
 --- !u!114 &6895327427570354697
 MonoBehaviour:
   m_ObjectHideFlags: 0

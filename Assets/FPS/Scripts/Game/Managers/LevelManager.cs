@@ -146,6 +146,22 @@ namespace Unity.FPS.Game
 			SceneManager.sceneLoaded -= OnNewSceneLoaded();
 		}
 
-		public static LevelManager instance;
+		#region Singleton
+		private static LevelManager instance;
+		public static LevelManager Instance
+		{
+			get
+			{
+				if (instance == null)
+					instance = FindObjectOfType(typeof(LevelManager)) as LevelManager;
+
+				return instance;
+			}
+			set
+			{
+				instance = value;
+			}
+		}
+		#endregion
 	}
 }

@@ -20,6 +20,9 @@ namespace Unity.FPS.Gameplay
         [Tooltip("Used to flip the horizontal input axis")]
         public bool InvertXAxis = false;
 
+        [Tooltip("Used to allow player to switch colors via button press")]
+        public bool CanSwitchColors = false;
+
         GameFlowManager m_GameFlowManager;
         PlayerCharacterController m_PlayerCharacterController;
         bool m_FireInputWasHeld;
@@ -124,7 +127,7 @@ namespace Unity.FPS.Gameplay
 
         public bool GetColorSwitchInput()
 		{
-            if (CanProcessInput())
+            if (CanProcessInput() && CanSwitchColors)
 			{
                 return Input.GetButtonDown(GameConstants.k_ButtonNameSwitchColor);
             }

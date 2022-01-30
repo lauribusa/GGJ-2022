@@ -9,10 +9,10 @@ public class TogglableObject : MonoBehaviour
     public bool IsSolid;
     public bool IsFloor;
     public ActiveColor AssignedActiveColor;
-    private Mesh Mesh;
 	[SerializeField]
     private Collider meshCollider;
-	private MeshRenderer meshRenderer;
+	public MeshRenderer meshRenderer;
+	public MeshFilter meshFilter;
 	void Awake()
     {
 		Init();
@@ -21,8 +21,18 @@ public class TogglableObject : MonoBehaviour
 
 	private void Init()
 	{
-		meshCollider = GetComponentInChildren<MeshCollider>();
-		meshRenderer = GetComponentInChildren<MeshRenderer>();
+		if (meshCollider == null)
+		{
+			meshCollider = GetComponentInChildren<BoxCollider>();
+		}
+		if (meshRenderer == null)
+		{
+			meshRenderer = GetComponentInChildren<MeshRenderer>();
+		}
+		if (meshFilter == null)
+		{
+			meshFilter = GetComponentInChildren<MeshFilter>();
+		}
 	}
 
 	private void Start()
@@ -98,9 +108,36 @@ public class TogglableObject : MonoBehaviour
 		return newMaterial;
 	}
 
+	private Mesh SelectMesh(TogglableObjectSO meshReference)
+	{
+		Mesh newMesh;
+		if (IsSolid)
+		{
+			if (IsFloor)
+			{
+				newMesh = meshReference.SolidFloorMesh;
+			} else
+			{
+				newMesh = meshReference.SolidWallMesh;
+			}
+		}
+		else
+		{
+			if (IsFloor)
+			{
+				newMesh = meshReference.NonSolidFloorMesh;
+			}
+			else
+			{
+				newMesh = meshReference.NonSolidWallMesh;
+			}
+		}
+
+		return newMesh;
+	}
     public void ToggleSolidState(ActiveColor currentActiveColor, TogglableObjectSO materialReference)
 	{
-		if(meshCollider == null || meshRenderer == null)
+		if(meshCollider == null || meshRenderer == null || meshFilter == null)
 		{
 			Init();
 		}
@@ -122,7 +159,6 @@ public class TogglableObject : MonoBehaviour
 		{
             IsSolid = false;
 			meshCollider.enabled = false;
-			//meshRenderer.enabled = false;
 			if (IsFloor)
 			{
                 gameObject.layer = (int)TogglableObjectState.NonSolidFloor;
@@ -132,11 +168,11 @@ public class TogglableObject : MonoBehaviour
 			}
 		}
 		meshRenderer.material = SelectMaterial(materialReference);
+		meshFilter.mesh = SelectMesh(materialReference);
 	}
 
     private void AssignSelfToManager()
 	{
 		FindObjectOfType<LevelManager>().AssignToList(this);
-		//LevelManager.Instance.AssignToList(this);
     }
 }

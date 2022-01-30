@@ -72,6 +72,11 @@ PrefabInstance:
       propertyPath: AssignedActiveColor
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4198997741808647346, guid: ee169f2228e0f8c41897d565828401dd,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bb5a6e0f6beebda468bcf23a300dddeb, type: 2}
     - target: {fileID: 9167409088398760334, guid: ee169f2228e0f8c41897d565828401dd,
         type: 3}
       propertyPath: m_Materials.Array.data[0]

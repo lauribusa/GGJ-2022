@@ -18,9 +18,9 @@ MonoBehaviour:
   SolidFloorRedMaterial: {fileID: 2100000, guid: 1151f4057e77ab5429143caedba0a672,
     type: 2}
   NonSolidFloorMesh: {fileID: 0}
-  NonSolidFloorBlueMaterial: {fileID: 2100000, guid: 807df0a3bd5fb484687907be1b8246c0,
+  NonSolidFloorBlueMaterial: {fileID: 2100000, guid: bb5a6e0f6beebda468bcf23a300dddeb,
     type: 2}
-  NonSolidFloorRedMaterial: {fileID: 2100000, guid: 1151f4057e77ab5429143caedba0a672,
+  NonSolidFloorRedMaterial: {fileID: 2100000, guid: d7ce2db27bd656743a63d1c98f5f0f43,
     type: 2}
   SolidWallMesh: {fileID: 0}
   SolidWallBlueMaterial: {fileID: 2100000, guid: 807df0a3bd5fb484687907be1b8246c0,
@@ -28,7 +28,7 @@ MonoBehaviour:
   SolidWallRedMaterial: {fileID: 2100000, guid: 1151f4057e77ab5429143caedba0a672,
     type: 2}
   NonSolidWallMesh: {fileID: 0}
-  NonSolidWallBlueMaterial: {fileID: 2100000, guid: 807df0a3bd5fb484687907be1b8246c0,
+  NonSolidWallBlueMaterial: {fileID: 2100000, guid: bb5a6e0f6beebda468bcf23a300dddeb,
     type: 2}
-  NonSolidWallRedMaterial: {fileID: 2100000, guid: 1151f4057e77ab5429143caedba0a672,
+  NonSolidWallRedMaterial: {fileID: 2100000, guid: d7ce2db27bd656743a63d1c98f5f0f43,
     type: 2}

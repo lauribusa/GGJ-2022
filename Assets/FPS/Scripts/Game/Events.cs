@@ -22,6 +22,7 @@ namespace Unity.FPS.Game
         public static DamageEvent DamageEvent = new DamageEvent();
         public static DisplayMessageEvent DisplayMessageEvent = new DisplayMessageEvent();
         public static ColorSwitchEvent ColorSwitchEvent = new ColorSwitchEvent();
+        public static ColorSwitchTriggerEvent ColorSwitchTriggerEvent = new ColorSwitchTriggerEvent();
     }
 
     public class ObjectiveUpdateEvent : GameEvent
@@ -40,8 +41,14 @@ namespace Unity.FPS.Game
         public bool Win;
     }
 
+    public class ColorSwitchTriggerEvent: GameEvent
+	{
+
+	}
+
     public class ColorSwitchEvent: GameEvent
 	{
+        public ActiveColor newActiveColor;
 	}
 
     public class PlayerDeathEvent : GameEvent { }

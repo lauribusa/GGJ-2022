@@ -16,12 +16,14 @@ namespace Unity.FPS.Game
 	public class LevelManager : MonoBehaviour
 	{
 		public ActiveColor _initialActiveColor;
-		[SerializeField] private ActiveColor CurrentActiveColor;
+		public ActiveColor CurrentActiveColor;
 		[SerializeField] private List<TogglableObject> TogglableObjectList;
 		public TogglableObjectSO togglableObjectSO;
 		private void Awake()
 		{
+			EventManager.AddListener<ColorSwitchTriggerEvent>(OnColorSwitchTriggerEvent);
 			EventManager.AddListener<ColorSwitchEvent>(OnColorSwitchEvent);
+			EventManager.AddListener<GameOverEvent>(OnGameEndEvent);
 			SceneManager.sceneUnloaded += OnNewSceneUnloaded();
 			SceneManager.sceneLoaded += OnNewSceneLoaded();
 		}
@@ -45,14 +47,13 @@ namespace Unity.FPS.Game
 		private void InitializeLevelState()
 		{
 			SetActiveColor(_initialActiveColor);
-			TriggerColorSwitchEvent();
+			TriggerColorSwitchTriggerEvent();
 		}
 
 		private void GetAllTogglableObjects()
 		{
 			if(TogglableObjectList.Count <= 0)
 			{
-				Debug.Log("List was empty");
 				TogglableObject[] togglableObjects = FindObjectsOfType<TogglableObject>();
 				TogglableObjectList = togglableObjects.ToList();
 			}
@@ -65,6 +66,10 @@ namespace Unity.FPS.Game
 
 		public void AssignToList(TogglableObject togglableObject)
 		{
+			if (TogglableObjectList.Contains(togglableObject))
+			{
+				return;
+			}
 			TogglableObjectList.Add(togglableObject);
 		}
 
@@ -84,19 +89,29 @@ namespace Unity.FPS.Game
 			{
 				TogglableObjectList.ForEach(obj =>
 				{
-					obj?.ToggleSolidState(CurrentActiveColor, togglableObjectSO);
+					obj.ToggleSolidState(CurrentActiveColor, togglableObjectSO);
 				});
 			}
 		}
 
-		private void TriggerColorSwitchEvent()
+		public void TriggerColorSwitchEvent()
 		{
 			ColorSwitchEvent evt = Events.ColorSwitchEvent;
+			evt.newActiveColor = CurrentActiveColor == ActiveColor.BLUE ? ActiveColor.RED : ActiveColor.BLUE;
 			EventManager.Broadcast(evt);
 		}
 		private void OnGameEndEvent(GameOverEvent evt)
 		{
 			ClearTogglableObjectList();
+		}
+		private void OnColorSwitchTriggerEvent(ColorSwitchTriggerEvent evt)
+		{
+			TriggerColorSwitchEvent();
+		}
+
+		private void TriggerColorSwitchTriggerEvent()
+		{
+			EventManager.Broadcast(Events.ColorSwitchTriggerEvent);
 		}
 		private void OnColorSwitchEvent(ColorSwitchEvent evt)
 		{
@@ -116,7 +131,9 @@ namespace Unity.FPS.Game
 
 		void OnDestroy()
 		{
+			EventManager.RemoveListener<ColorSwitchTriggerEvent>(OnColorSwitchTriggerEvent);
 			EventManager.RemoveListener<ColorSwitchEvent>(OnColorSwitchEvent);
+			EventManager.RemoveListener<GameOverEvent>(OnGameEndEvent);
 			SceneManager.sceneUnloaded -= OnNewSceneUnloaded();
 			SceneManager.sceneLoaded -= OnNewSceneLoaded();
 		}

@@ -47,6 +47,7 @@ MonoBehaviour:
   IsSolid: 0
   IsFloor: 0
   AssignedActiveColor: 0
+  meshCollider: {fileID: 0}
 --- !u!1001 &3240396557110015994
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -77,17 +78,17 @@ PrefabInstance:
     - target: {fileID: 2863981429962234162, guid: 4f42672477f836a4281ef4c3bdfe6d05,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -3.619999
       objectReference: {fileID: 0}
     - target: {fileID: 2863981429962234162, guid: 4f42672477f836a4281ef4c3bdfe6d05,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2863981429962234162, guid: 4f42672477f836a4281ef4c3bdfe6d05,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.20999908
       objectReference: {fileID: 0}
     - target: {fileID: 2863981429962234162, guid: 4f42672477f836a4281ef4c3bdfe6d05,
         type: 3}

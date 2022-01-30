@@ -136,7 +136,7 @@ public class TogglableObject : MonoBehaviour
 
     private void AssignSelfToManager()
 	{
-
-		LevelManager.instance.AssignToList(this);
+		FindObjectOfType<LevelManager>().AssignToList(this);
+		//LevelManager.Instance.AssignToList(this);
     }
 }

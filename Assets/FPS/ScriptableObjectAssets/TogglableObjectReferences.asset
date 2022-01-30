@@ -12,23 +12,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b5a88768dc6e2640970d916251c2b74, type: 3}
   m_Name: TogglableObjectReferences
   m_EditorClassIdentifier: 
-  SolidFloorMesh: {fileID: 0}
-  SolidFloorBlueMaterial: {fileID: 2100000, guid: 807df0a3bd5fb484687907be1b8246c0,
+  SolidFloorMesh: {fileID: -9196165092814118998, guid: d4b76d63560e3a74f937dbf0e0d75c6c,
+    type: 3}
+  SolidFloorBlueMaterial: {fileID: 2100000, guid: c071ab9b73ad24543872ad64c777fde4,
     type: 2}
-  SolidFloorRedMaterial: {fileID: 2100000, guid: 1151f4057e77ab5429143caedba0a672,
+  SolidFloorRedMaterial: {fileID: 2100000, guid: 26742967a2feb80438ec00a9769f5daf,
     type: 2}
-  NonSolidFloorMesh: {fileID: 0}
-  NonSolidFloorBlueMaterial: {fileID: 2100000, guid: bb5a6e0f6beebda468bcf23a300dddeb,
+  NonSolidFloorMesh: {fileID: -6381850160226620653, guid: 412eb1b4cb7fe134cacc8527b4fd6f8d,
+    type: 3}
+  NonSolidFloorBlueMaterial: {fileID: 2100000, guid: e2ab05f1ba98e5546bef7a556eb02edb,
     type: 2}
-  NonSolidFloorRedMaterial: {fileID: 2100000, guid: d7ce2db27bd656743a63d1c98f5f0f43,
+  NonSolidFloorRedMaterial: {fileID: 2100000, guid: 5b985f2ae3087934ba766fb966a6e4fc,
     type: 2}
-  SolidWallMesh: {fileID: 0}
-  SolidWallBlueMaterial: {fileID: 2100000, guid: 807df0a3bd5fb484687907be1b8246c0,
+  SolidWallMesh: {fileID: -282098460436833916, guid: f4eebadbc7c1f2d47ae8feae64d2f258,
+    type: 3}
+  SolidWallBlueMaterial: {fileID: 2100000, guid: 0ae65ae6693329e419a1fdb77a81a43a,
     type: 2}
-  SolidWallRedMaterial: {fileID: 2100000, guid: 1151f4057e77ab5429143caedba0a672,
+  SolidWallRedMaterial: {fileID: 2100000, guid: 7293f38e954da914f857f9909f3d0db8,
     type: 2}
-  NonSolidWallMesh: {fileID: 0}
-  NonSolidWallBlueMaterial: {fileID: 2100000, guid: bb5a6e0f6beebda468bcf23a300dddeb,
+  NonSolidWallMesh: {fileID: 3390923454314911925, guid: db03807dafd0085478d59292b0e66b85,
+    type: 3}
+  NonSolidWallBlueMaterial: {fileID: 2100000, guid: 1ad0234a080c3d64591eae5792be9d04,
     type: 2}
-  NonSolidWallRedMaterial: {fileID: 2100000, guid: d7ce2db27bd656743a63d1c98f5f0f43,
+  NonSolidWallRedMaterial: {fileID: 2100000, guid: b97180806defd4f4588b7f47f3fa1253,
     type: 2}

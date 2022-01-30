@@ -65,7 +65,7 @@ PrefabInstance:
     - target: {fileID: 1296526486145202206, guid: 473a33ed3d260704ab0bad39a121581a,
         type: 3}
       propertyPath: m_Name
-      value: TogglableObject_BlueWall
+      value: TogglableWall_BLUE
       objectReference: {fileID: 0}
     - target: {fileID: 3378007012949936190, guid: 473a33ed3d260704ab0bad39a121581a,
         type: 3}
@@ -76,6 +76,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 807df0a3bd5fb484687907be1b8246c0, type: 2}
+      objectReference: {fileID: 2100000, guid: 0ae65ae6693329e419a1fdb77a81a43a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 473a33ed3d260704ab0bad39a121581a, type: 3}

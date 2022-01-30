@@ -10,6 +10,7 @@ namespace Unity.FPS.Game
         [Range(0, 1)] [Tooltip("Multiplier to apply to self damage")]
         public float SensibilityToSelfdamage = 0.5f;
 
+        public NeutralSwitch isSwitch;
         public Health Health { get; private set; }
 
         void Awake()
@@ -24,6 +25,10 @@ namespace Unity.FPS.Game
 
         public void InflictDamage(float damage, bool isExplosionDamage, GameObject damageSource)
         {
+            if (isSwitch)
+			{
+                isSwitch.OnDamageTrigger();
+			}
             if (Health)
             {
                 var totalDamage = damage;

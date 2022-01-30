@@ -25,6 +25,11 @@ public class TogglableObject : MonoBehaviour
 		meshRenderer = GetComponentInChildren<MeshRenderer>();
 	}
 
+	private void Start()
+	{
+		AssignSelfToManager();
+	}
+
 	private Material SelectMaterial(TogglableObjectSO materialReference)
 	{
 		Material newMaterial;
@@ -131,6 +136,7 @@ public class TogglableObject : MonoBehaviour
 
     private void AssignSelfToManager()
 	{
-		FindObjectOfType<LevelManager>().AssignToList(this);
+
+		LevelManager.instance.AssignToList(this);
     }
 }

@@ -47,7 +47,7 @@ MonoBehaviour:
   IsSolid: 0
   IsFloor: 1
   AssignedActiveColor: 0
-  meshCollider: {fileID: 1565284694222910006}
+  boxCollider: {fileID: 1565284694222910006}
   meshRenderer: {fileID: 4198997741808647346}
   meshFilter: {fileID: 4198997741809614450}
 --- !u!1 &4198997741806379634

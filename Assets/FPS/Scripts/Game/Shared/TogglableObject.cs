@@ -10,7 +10,7 @@ public class TogglableObject : MonoBehaviour
     public bool IsFloor;
     public ActiveColor AssignedActiveColor;
 	[SerializeField]
-    private Collider meshCollider;
+    private BoxCollider boxCollider;
 	public MeshRenderer meshRenderer;
 	public MeshFilter meshFilter;
 	void Awake()
@@ -21,16 +21,10 @@ public class TogglableObject : MonoBehaviour
 
 	private void Init()
 	{
-		if (meshCollider == null)
+		if(boxCollider == null || meshRenderer == null || meshFilter == null)
 		{
-			meshCollider = GetComponentInChildren<BoxCollider>();
-		}
-		if (meshRenderer == null)
-		{
+			boxCollider = GetComponentInChildren<BoxCollider>();
 			meshRenderer = GetComponentInChildren<MeshRenderer>();
-		}
-		if (meshFilter == null)
-		{
 			meshFilter = GetComponentInChildren<MeshFilter>();
 		}
 	}
@@ -137,15 +131,14 @@ public class TogglableObject : MonoBehaviour
 	}
     public void ToggleSolidState(ActiveColor currentActiveColor, TogglableObjectSO materialReference)
 	{
-		if(meshCollider == null || meshRenderer == null || meshFilter == null)
+		if(boxCollider == null || meshRenderer == null || meshFilter == null)
 		{
 			Init();
 		}
         if(currentActiveColor == AssignedActiveColor)
 		{
 			IsSolid = true;
-			meshCollider.enabled = true;
-			//meshRenderer.enabled = true;
+			boxCollider.enabled = true;
 			
 			if (IsFloor)
 			{
@@ -158,7 +151,8 @@ public class TogglableObject : MonoBehaviour
 		} else
 		{
             IsSolid = false;
-			meshCollider.enabled = false;
+			boxCollider.enabled = false;
+
 			if (IsFloor)
 			{
                 gameObject.layer = (int)TogglableObjectState.NonSolidFloor;

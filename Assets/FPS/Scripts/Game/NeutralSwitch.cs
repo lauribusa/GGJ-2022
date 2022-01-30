@@ -32,7 +32,6 @@ namespace Unity.FPS.Game
 
 		public void OnDamageTrigger()
 		{
-			Debug.Log("Damaged Switch");
 			levelManager.TriggerColorSwitchEvent();
 		}
 

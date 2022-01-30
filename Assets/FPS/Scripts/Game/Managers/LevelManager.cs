@@ -21,14 +21,6 @@ namespace Unity.FPS.Game
 		public TogglableObjectSO togglableObjectSO;
 		private void Awake()
 		{
-			if (instance != null)
-			{
-				Destroy(gameObject);
-			}
-			else
-			{
-				instance = this;
-			}
 			EventManager.AddListener<ColorSwitchTriggerEvent>(OnColorSwitchTriggerEvent);
 			EventManager.AddListener<ColorSwitchEvent>(OnColorSwitchEvent);
 			EventManager.AddListener<GameOverEvent>(OnGameEndEvent);
@@ -145,23 +137,5 @@ namespace Unity.FPS.Game
 			SceneManager.sceneUnloaded -= OnNewSceneUnloaded();
 			SceneManager.sceneLoaded -= OnNewSceneLoaded();
 		}
-
-		#region Singleton
-		private static LevelManager instance;
-		public static LevelManager Instance
-		{
-			get
-			{
-				if (instance == null)
-					instance = FindObjectOfType(typeof(LevelManager)) as LevelManager;
-
-				return instance;
-			}
-			set
-			{
-				instance = value;
-			}
-		}
-		#endregion
 	}
 }

@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/FPS/Scenes/LoseScene.unity
     guid: 72e5c65a45893714484002914e3fd521
   - enabled: 1
-    path: Assets/FPS/Scenes/MainScene.unity
-    guid: d794a2ef8ba31d847ad3c19d03e2ddb9
+    path: Assets/FPS/Scenes/Scene_Level1.unity
+    guid: 950e6a9e44f72334996a2cf80363a45f
+  - enabled: 1
+    path: Assets/FPS/Scenes/Scene_LVL2.unity
+    guid: bf4809d657305de49aeaae011a74a172
   m_configObjects: {}

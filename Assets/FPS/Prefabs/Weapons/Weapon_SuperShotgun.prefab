@@ -96,7 +96,7 @@ PrefabInstance:
     - target: {fileID: 2989130214937547252, guid: 8532f796a09437d4ab45eb06ae8fea54,
         type: 3}
       propertyPath: MaxAmmo
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2989130214937547252, guid: 8532f796a09437d4ab45eb06ae8fea54,
         type: 3}
@@ -111,7 +111,7 @@ PrefabInstance:
     - target: {fileID: 2989130214937547252, guid: 8532f796a09437d4ab45eb06ae8fea54,
         type: 3}
       propertyPath: AmmoReloadRate
-      value: 1.5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2989130214937547252, guid: 8532f796a09437d4ab45eb06ae8fea54,
         type: 3}

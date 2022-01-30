@@ -16,7 +16,7 @@ namespace Unity.FPS.Game
 	public class LevelManager : MonoBehaviour
 	{
 		public ActiveColor _initialActiveColor;
-		[SerializeField] public ActiveColor CurrentActiveColor;
+		public ActiveColor CurrentActiveColor;
 		[SerializeField] private List<TogglableObject> TogglableObjectList;
 		public TogglableObjectSO togglableObjectSO;
 		private void Awake()
@@ -47,7 +47,7 @@ namespace Unity.FPS.Game
 		private void InitializeLevelState()
 		{
 			SetActiveColor(_initialActiveColor);
-			TriggerColorSwitchEvent();
+			TriggerColorSwitchTriggerEvent();
 		}
 
 		private void GetAllTogglableObjects()
@@ -66,6 +66,10 @@ namespace Unity.FPS.Game
 
 		public void AssignToList(TogglableObject togglableObject)
 		{
+			if (TogglableObjectList.Contains(togglableObject))
+			{
+				return;
+			}
 			TogglableObjectList.Add(togglableObject);
 		}
 
@@ -103,6 +107,11 @@ namespace Unity.FPS.Game
 		private void OnColorSwitchTriggerEvent(ColorSwitchTriggerEvent evt)
 		{
 			TriggerColorSwitchEvent();
+		}
+
+		private void TriggerColorSwitchTriggerEvent()
+		{
+			EventManager.Broadcast(Events.ColorSwitchTriggerEvent);
 		}
 		private void OnColorSwitchEvent(ColorSwitchEvent evt)
 		{

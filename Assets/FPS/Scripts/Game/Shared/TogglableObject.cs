@@ -13,7 +13,7 @@ public class TogglableObject : MonoBehaviour
 	[SerializeField]
     private Collider meshCollider;
 	private MeshRenderer meshRenderer;
-	void Start()
+	void Awake()
     {
 		Init();
         AssignSelfToManager();
